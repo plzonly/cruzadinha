@@ -249,25 +249,25 @@ article{
         </div>
     </footer>
     <script>
-    var special_words = ['CPU', 'ULA', 'Registradores', 'RAM', 'ROM', 'EPROM', 'FLASH', 'Memória de Massa', 'DMA', 'CS', 'Adress Bus', 'Data Bus', 'I5', 'I7', 'Dual Core', 'Quad Core'];
+    var special_words = ['CPU', 'ULA', 'REGISTRADORES', 'RAM', 'ROM', 'EPROM', 'FLASH', 'MEMÓRIA DE MASSA', 'DMA', 'CS', 'ADRESS BUS', 'DATA BUS', 'I5', 'I7', 'DUAL CORE', 'QUAD CORE'];
 
 var questions_list = [
     'Parte física do computador que funciona como um cérebro, composta por diversos componentes para coordenar os dados e fazer operações lógicas e aritiméticas com eles. Depende de outros componentes para funcionar e destaca-se em tarefas complexas e rápidas.',
     'Parte do processador onde ocorre as operações aritiméticas e lógicas.  ',
-    'Uma memória local rápida do microprocessador, destinada ao armazenamento de dados e instruções. Essa memória se localiza dentro do próprio microprocesssador. Há também registradores especiais como: Acumulador, Registrador de Flags e Contador do Programa.',
-    'Tipo de memória volátil que tem como nome Random Acess Memory. Qual é a sigla deste componente?',
-    'Tipo de memória não volátil que oferece dados apenas para leitura',
-    'Tipo de memória não volátil que precisa ter seu chip exposto a luz ultravioleta para apagar seu conteúdo',
-    'Tipo particular de EEPROM que mantém as informações armazenadas sem a necessidade de uma fonte de energia elétrica',
-    'Tipo de memória que precisa ter seu conteúdo copiado na RAM para poder ser executado pela CPU',
-    'Permite que periféricos acessem diretamente a RAM sem ocupar processamento',
-    'Também conhecido como Slave Select (SS). Usado para selecionar um ou um conjunto de circuitos que estão conectados no computador',
-    'Grupo de linhas ou trilhas usadas para se referir a um endereço físico na memória. O número de trilhas determina a quantidade de endereços na memória física',
-    'Também chamado de Memory Bus. É responsável para carregar os dados.',
-    'Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em setembro de 2009',
-    'Modelo de processador desenvolvido pela Intel qu teve sua primeira versão lançada em novembro de 2008',    
-    'Tipo de processador que possui dois processadores ou melhor dizendo ‘dois centros, núcleos ou cores de execução‘ no mesmo circuito integrado.  Cada core tem sua própria memória cash e controlador o que permite que funcione mais efetivamente do que um processador single',
-    'Segue o mesmo princípio de um dual-core, mas agora em teoria tem o dobro da capacidade de processamento'
+    'Conjunto de memórias rápidas do microprocessador, destinadas ao armazenamento de dados e instruções. Essas memórias se localizam dentro do próprio microprocesssador.',
+    'Tipo de memória primária. Memória temporária onde os dados ficam armazenados durante o funcionamento do computador ou processo. Memória volátil',
+    'Memória permanete disponível apenas para leitura. Guarda os dados essenciais para o funcionamento do sistema, como a BIOS. Memória não volátil.',
+    'Tipo de chip de memória que mantém os dados quando o computador é armazenado. Tipo de memória que programável com finalidade somente de leitura, para apagar seus dados é necessário receber um luz ultravioleta; Memória não volátil.',
+    'Dispositivo de armazenamento não volátil; Mantém os dados armazenados mesmo quando o fornecimento de energia é interrompido. Uma memória que pode ser transportada, como o pen-drive. Memória volátil.',
+    'Memória secundária. Tipo de memória onde os dados são armazenados permanentemente. Memória lenta porém com grande capacidade. Necessário que a RAM colete seus dados para a CPU processar. Memória volátil. ',
+    'Permite que componentes de hardware, como o mouse, acessem diretamente a memória, sem a necessidade desses dados passarem pela CPU',
+    'Mecanismo utilizado para controle quando há múltiplos dispositivos conectados a um único barramento de dados. Permite que um único barramento de dados seja utilizado para trafegar dados de diversos dispositivos.',
+    'Transporta endereços de memória, determinando onde os dados serão lidos ou gravados.',
+    'Transporta os dados em si, determinando o que será transferido entre o processador e seus componentes.',
+    'Fabricado pela Intel. Lançado em 2009 como parte da arquitetura Nehalen. Entre 4 e 6 núcleos e 4 a 12 threads. De 6 a 12 MB de cache.',
+    'Fabricado pela Intel. Lançado em 2008 como parte da arquitetura Nehalen. 4 a 8 núcles e de 8 a 16 threads, dependendo da geração. Tecnologia de Hyper-Threading, permitindo que cada núcleo físico opere com 2 threads, aumentando o paralelismo. Entre 8 a 16 MB de cache.',    
+    'Processador com apenas dois núcleos, cada um operando de maneira independente. Um  exemplo seria o Intel E6800',
+    'Processador com quatro núcleos, cada um operando de maneira independente.  Um exemplo seria o AMD Ryzen 3 2200G.'
 ];
 
 var filledCell = [2, 20, 38, 133, 134, 135, 59, 77, 95, 113, 131, 149,
@@ -642,7 +642,7 @@ function paintCells() {
 }
 
 function verify() {
-    var answer = input_answer.value;
+    var answer = (input_answer.value).toUpperCase();
 
     if (answer != '') {
         // answer = answer.toLowerCase();
